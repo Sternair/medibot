@@ -11,6 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "yarn lint && react-scripts build",
+    "build-and-deploy": "yarn build && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**.ts src/**.tsx"
@@ -43,5 +44,6 @@
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3"
-  }
+  },
+  "eslintIgnore": ["node_modules", "**/*.d.ts"]
 }
