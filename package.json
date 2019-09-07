@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn lint && react-scripts build",
-    "build-and-deploy": "yarn build && firebase deploy",
+    "build": "react-scripts build",
+    "build-and-deploy": "yarn lint && yarn build && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**.ts src/**.tsx"

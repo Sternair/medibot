@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "node"
+warnings_are_errors: false
+branches:
+  only:
+    - master
+install:
+  - yarn
+script:
+  - yarn lint
+  - yarn build
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "EourveELHD0CRJ8kLVyCjveMG3kpITgvNS47y3HpItDibbZ0KpEuAF7x4DDMCVXFt3LT87GY1RwSG77ntx8lJd69jQBIlqA9imDEbukokUijumXwHCUDN0NCKSOtFXjoU6XjASCpT8JX2bqOxGL44T9Ex7skwEOSuHJrSW6oWJJv2Bod/gA+bUQUiAMTr7vmyykQyNWW0Sy9oM5ytSeiSPgNVXeR0rygIHRnh51RmG6MmuJe5ni1uL32N1Gh95TQy658FNqAYRooxJqzc4k2+/9Re7zFb5xAnVrx6q8/TFYP5butqOfyPUzcQLnQSl6WxmIR7gNsOH35iWtxDPg4PYWnUbkG+FusuynlBy3L00jwnoSyk6odI2YsJfJ6LaN+nUIOM1RSEFhSbaX45Q+uMe/YUhS/WXZ0Dg5U/AF+MJo9Qy0Kc3xDJjv5oOjUwndeQBRny0Ern640pILjBgmksqqkDoqVgBr6KSdj+7Wz2IiY6JkhWibknFP3zvtW7EILHestg1Zi8jHuW2VfjchtVlbRbocKfAUvp1W3itwmLUEjlYJIMqbYDKTTmZHFgcb4gUBRrKylUdSOi+2Dmycp/Ym4ew2Pv5gS5GTvhDOriDakFlkLs9QnuqzzbVJ/1aEfEoJqjPrtFfNOgUQiIqeSjlR/whkT+ZYB2v5Ue4Uunng="
