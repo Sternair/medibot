@@ -27,6 +27,7 @@
     "rules": {
         "import/no-unresolved": [0, { "caseSensitive": false }],
         "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-props-no-spreading": [0],
         "semi": "off"
     },
     "settings": {
