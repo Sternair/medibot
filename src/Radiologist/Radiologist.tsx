@@ -15,6 +15,7 @@ class Radiologist extends React.Component {
         <iframe
           src="https://calendar.google.com/calendar/embed?src=medibot.techfest%40gmail.com&ctz=Europe%2FBerlin"
           style={{ height: "80vh", width: "80vw" }}
+          title="radiology calendar"
         ></iframe>
       </div>
     );
