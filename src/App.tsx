@@ -3,7 +3,7 @@ import './App.css'
 
 const App: React.FC = () => (
   <div className="App">
-    <h1>MediBot</h1>
+    <h1 style={{ color: 'red' }}>MediBot</h1>
     <iframe
       title="MediBot"
       src="https://webchat.snatchbot.me/2715c805595f52956e1d88c113f1ccce2f6507ca7df65bd4799cf806d6745cd1"
