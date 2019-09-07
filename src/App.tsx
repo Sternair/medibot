@@ -15,15 +15,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 style={{ color: 'red' }}>MediBot</h1>
+      <h1>MediBot</h1>
       <FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
-        <FirebaseAuthConsumer>
-          {({ isSignedIn, user, providerId }): any => (
-            <pre style={{ height: 300, overflow: 'auto' }}>
-              {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
-            </pre>
-          )}
-        </FirebaseAuthConsumer>
         <IfFirebaseAuthed>
           {() => (
             <Router />
