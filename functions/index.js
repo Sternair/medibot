@@ -11,26 +11,24 @@ const ERROR_RESPONSE = {
 };
 const TIME_ZONE = "CET";
 
-import firebase from '../firebase/app'
-import firebaseConfig from '../firebase-config'
 
-firebase.initializeApp(firebaseConfig)
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
 exports.schedule = functions.https.onRequest((request, response) => {
     console.log(request.body);
-    var user_id = request.body.user_id;
-    var bot_id = request.body.bot_id;
-    var module_id = request.body.module_id;
-    var user_id = request.body.user_id;
+    var timeArray = ["10:00:00","10:40:00","11:20:00","11:35:00","12:00:00","13:00:00"];
+    var dateArray = ["2019-09-09","2019-09-10","2019-09-11"];
+    var name = "James Bond ";
+    var type = "MRI "
+    var title = "Appointment " + type + name;
+    var time = timeArray[Math.floor(Math.random() * timeArray.length)];
+    var date = dateArray[Math.floor(Math.random() * dateArray.length)];
+    var description = "";
+    var startTime =  date+"T"+time;
+    var endTime =  date+"T"+time;
+    addEventToCalendar(title, description, startTime, endTime);
+    var msg = "Thank you! Based on your responses, we can schedule your appointment for the "+date+" at "+time+". Is that okay with you?"
     response.send({
-        "user_id": user_id,
-        "bot_id": bot_id,
-        "module_id": module_id,
-        "message": "Reservation is made. Our registrar will contact you as soon as possible to book the appointment. Learn more about your examination and radiology on our website."
+        "message": msg
     });
-    enterAppointment("MRI for Mr. Mustermann", 100);
 });
 
 exports.patientFind = functions.https.onRequest((request, response) => {
@@ -48,37 +46,6 @@ exports.patientFind = functions.https.onRequest((request, response) => {
     }
 
 });
-
-exports.addStaticEventToCalendar = functions.https.onRequest(
-  (request, response) => {
-    const eventData = {
-      eventName: "Firebase Event",
-      description: "This is a sample description",
-      startTime: "2019-09-09T10:00:00",
-      endTime: "2019-09-09T13:00:00"
-    };
-    const oAuth2Client = new OAuth2(
-      googleCredentials.web.client_id,
-      googleCredentials.web.client_secret,
-      googleCredentials.web.redirect_uris[0]
-    );
-
-    oAuth2Client.setCredentials({
-      refresh_token: googleCredentials.refresh_token
-    });
-
-    addEvent(eventData, oAuth2Client)
-      .then(data => {
-        response.status(200).send(data);
-        return;
-      })
-      .catch(err => {
-        console.error("Error adding event: " + err.message);
-        response.status(500).send(ERROR_RESPONSE);
-        return;
-      });
-  }
-);
 
 function addEventToCalendar(title, description, startTime, endTime) {
   /* 
