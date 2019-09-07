@@ -24,7 +24,7 @@ class LoadingScreen extends React.Component<{}, { isLoading: boolean }> {
     if (this.state.isLoading) {
       return (
         <div style={{ height: "100vh", display: "flex", alignItems: "center" }}>
-          <img src={logo} className="loading-screen" />
+          <img src={logo} className="loading-screen" alt="Loading"/>
         </div>
       );
     } else {
