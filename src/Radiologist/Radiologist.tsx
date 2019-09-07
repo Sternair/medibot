@@ -1,6 +1,6 @@
 import React from "react";
 import "./Radiologist.css";
-import ApiCalendar from "react-google-calendar-api/ApiCalendar";
+//import ApiCalendar from "react-google-calendar-api/ApiCalendar";
 
 class Radiologist extends React.Component {
   constructor(props: any) {
