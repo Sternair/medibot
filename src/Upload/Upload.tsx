@@ -52,7 +52,7 @@ const Patient: React.FC = () => (
 
   <div className="App">
 <div className="content" dangerouslySetInnerHTML={{__html: fake}}></div>
-<input id="file" type="file" accept="image/*" onChange={() => { window.location.assign('/');}}/>
+<input id="file" type="file" accept="image/*" onChange={() => { window.location.assign('/chat');}}/>
 
     
   </div>

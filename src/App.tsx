@@ -14,7 +14,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 style={{ color: 'red' }}>MediBot</h1>
       <Router />
     </div>
   )
