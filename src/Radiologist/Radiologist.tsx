@@ -1,20 +1,9 @@
 import React from "react";
 import "./Radiologist.css";
-//import ApiCalendar from "react-google-calendar-api/ApiCalendar";
 
 class Radiologist extends React.Component {
   constructor(props: any) {
     super(props);
-
-    this.state = {
-      count: 0
-    };
-
-    console.log("Constructor!");
-  }
-
-  componentDidMount() {
-    console.log("Component has mounted!");
   }
 
   render() {
@@ -22,7 +11,11 @@ class Radiologist extends React.Component {
 
     return (
       <div className="Radiologist">
-        <h1 style={{ color: "red" }}>Radiologist</h1>
+        <h1 style={{ color: "red" }}>Termine MRI</h1>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=medibot.techfest%40gmail.com&ctz=Europe%2FBerlin"
+          style={{ height: "80vh", width: "80vw" }}
+        ></iframe>
       </div>
     );
   }
