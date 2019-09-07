@@ -2,10 +2,6 @@ import React from "react";
 import "./Radiologist.css";
 
 class Radiologist extends React.Component {
-  constructor(props: any) {
-    super(props);
-  }
-
   render() {
     console.log("SimpleCounter render call!");
 
