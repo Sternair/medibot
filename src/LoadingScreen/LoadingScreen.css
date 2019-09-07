@@ -2,5 +2,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40vw;
+  max-width: 40vw;
+  max-height: 50vh;
+  background-color: white;
 }

@@ -6,9 +6,9 @@ import Upload from './Upload/Upload'
 
 const Router = () => (
   <BrowserRouter>
-    <Route path="/" exact component={Patient} />
+    <Route path="/chat" exact component={Patient} />
     <Route path="/radiology" exact component={Radiologist} />
-    <Route path="/upload" exact component={Upload} />
+    <Route path="/" exact component={Upload} />
   </BrowserRouter>
 )
 
