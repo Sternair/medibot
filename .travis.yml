@@ -8,7 +8,6 @@ branches:
 install:
   - yarn
 script:
-  - yarn lint
   - yarn build
 deploy:
   provider: firebase
