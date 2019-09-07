@@ -2,12 +2,12 @@ import React from 'react'
 
 const Patient: React.FC = () => (
   <div className="App">
-    <h1 style={{ color: 'red' }}>Patient</h1>
     <iframe
       title="MediBot"
-      src="https://webchat.snatchbot.me/2715c805595f52956e1d88c113f1ccce2f6507ca7df65bd4799cf806d6745cd1"
-      style={{ height: '80vh', width: '80vw' }}
+      src="https://webchat.snatchbot.me/225c7fcc7f456262ffe0a5d00367c1f64c13bd35cf772244194dc75d7928db01"
+      style={{ height: '80vh', width: '100vw', border: 'none' }}
     />
+    <div style={{ height: '30px', width: '100vw', background: 'white',transform:'translateY(-100%)' }}></div>
   </div>
 )
 
