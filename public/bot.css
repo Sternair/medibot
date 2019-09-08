@@ -2,18 +2,47 @@
 
 
 #file {
-    background: url(camera.svg);
-    height: 80px;
-    width: 80px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+#fileLabel {
+    height: 120px;
+    width: 120px;
     display: block;
-    color: transparent;
-    -webkit-appearance: none;
-    border: none;
-    background-color: transparent;
-    display: inline-block;
-    padding: 150px 0 0 0;
-    overflow: hidden;
+    border: 2px solid #00b5e2;
+    padding: 20px 20px;
+    position: absolute;
     box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-size: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+#fileLabel:before {
+    content: "";
+    display: block;
+    background: white;
+    height: 122px;
+    width: 80px;
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#fileLabel:after {
+    content: "";
+    display: block;
+    background: white;
+    height: 80px;
+    width: 122px;
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    transform: translateY(-50%);
+}
+#fileLabel img {
+    position: relative;
+    z-index: 2;
 }

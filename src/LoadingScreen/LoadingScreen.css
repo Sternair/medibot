@@ -6,3 +6,11 @@
   max-height: 50vh;
   background-color: white;
 }
+.loading-screen-wrapper {
+  height: "100vh"; 
+  display: "flex";
+  align-items: "center";
+  position: relative;
+  background: white;
+  z-index: 3;
+}
