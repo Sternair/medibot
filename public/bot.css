@@ -17,7 +17,7 @@
     box-sizing: border-box;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-25%);
     z-index: 1;
 }
 #fileLabel:before {

@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import firebase from "firebase/app";
-import "firebase/auth";
-import firebaseConfig from "./firebase-config";
 import Router from "./Router";
 import Helmet from "react-helmet";
 
-firebase.initializeApp(firebaseConfig);
 
 const App = () => {
   useEffect(() => {
-    firebase.auth().signInAnonymously();
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }, []);
 
   return (

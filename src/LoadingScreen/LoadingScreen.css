@@ -7,10 +7,13 @@
   background-color: white;
 }
 .loading-screen-wrapper {
-  height: "100vh"; 
-  display: "flex";
-  align-items: "center";
-  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  position: fixed;
   background: white;
   z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
