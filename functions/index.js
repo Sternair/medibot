@@ -16,29 +16,24 @@ const TIME_ZONE = "CET";
 exports.suggestHospital = functions.https.onRequest((request, response) => {
     console.log(request.body);
     var timeArray = ["10:00", "10:40", "11:20", "11:35", "12:00", "13:00"];
-    var dateArray = ["09 September 2019", "10 September 2019-09-10", "11 September 2019", "12 September 2019", "15 September 2019", "16 September 2019"];
+    var dateArray = ["10.09.2019", "11.09.2019", "12.09.2019", "13.09.2019", "14.09.2019", "15.09.2019"];
     var hospitalArray = ["Klinikum Harlaching", "Radiology Munich South West", "Hospital of the University of Munich", "Kinderklinik, Poliklinik",
 "Radiologie, Nuklearmedizin", "Conradia Radiologie & Medical Prevention", "German Heart Centre Munich", "Red Cross Hospital", "medneo Group",
 "Dr. Matthias Lampe"];
-    const firstNames = ["Mrs. Laura", "Mrs. Susan", "Mrs. Sabrina", "Mrs. Johanna", "Mr. Andreas", "Mr. Michael", "Mr. Sebastian"];
-    const lastNames = ["Jones", "Huber", "Miller", "Mayer", "Untergruber", "Oberhuber"]
-    var name = getRandomElement(firstNames) + " " +getRandomElement(lastNames);
-    var type = "MRI "
-    var title = "Appointment " + type + name;
     var time = timeArray[Math.floor(Math.random() * timeArray.length)];
     var date = dateArray[Math.floor(Math.random() * dateArray.length)];
     var description = "";
     var startTime = date + "T" + time;
     var endTime = date + "T" + time;
     addEventToCalendar(title, description, startTime, endTime);
-    var msg = "We have this available slots for you:";
+    var msg = "We have the following slots available for you:";
     for(i=1;i<4;i++) {
-        msg += "\r\n" + i+") " + getRandomElement(hospitalArray) + " " + date + " at " + time;
+        msg += "\r\n" + i+") " + getRandomElement(hospitalArray) + "  |  " + date + "  |  " + time;
     }
-    msg += "\r\nPlease choose the best option for you?";
+    msg += "\r\nWhich one do you prefer? Please chose.";
     response.send({
         "message": msg,
-        "suggested_replies": ["1", "2", "3", "Another one"]
+        "suggested_replies": ["1", "2", "3", "Other preferences"]
     });
 });
 
