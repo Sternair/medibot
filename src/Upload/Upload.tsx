@@ -1,6 +1,8 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom';
-const fake=  `
+import React from "react";
+import { withRouter } from "react-router-dom";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
+
+const fake = `
 <link href="/bot.css" rel="stylesheet">
 <div _ngcontent-c0="" class="chat light ng-star-inserted"><div _ngcontent-c0="" class="chat__header" style="color: rgb(255, 255, 255); background: rgb(19, 41, 75);"><div _ngcontent-c0="" class="chat__name"><!----><div _ngcontent-c0="" class="chat__avatar ng-star-inserted" style="background-image: url(&quot;https://dvgpba5hywmpo.cloudfront.net/media/image/Z3ihYTlb24gamECoDnpvFdxP6&quot;);"></div><div _ngcontent-c0="" class="chat__bot-name">MediBot</div></div><div _ngcontent-c0="" class="chat__controls"><!----><div _ngcontent-c0="" class="ng-star-inserted"><!----></div><!----><div _ngcontent-c0=""><!----><!----></div><!----></div></div><div _ngcontent-c0="" class="chat__body"><ng-scrollbar _ngcontent-c0="" class="my-scrollbar" smoothscroll="" _nghost-c5="" trackx="false" tracky="true" compact="true" autohide="false"><div _ngcontent-c5="" class="ng-scrollbar-layout ng-scrollbar-x-layout"><div _ngcontent-c5="" class="ng-scrollbar-layout ng-scrollbar-y-layout"><div _ngcontent-c5="" class="ng-scroll-view-container"><div _ngcontent-c5="" cdkscrollable="" smoothscroll="" class="ng-scroll-view " style="width: calc(100% + 18px); height: 100%;"><!----><div _ngcontent-c0="" class="messages ng-star-inserted"><div _ngcontent-c0="" class="message" hidden=""><!----><div _ngcontent-c0="" class="message__avatar ng-star-inserted" style="background-image: url(&quot;https://dvgpba5hywmpo.cloudfront.net/media/image/Z3ihYTlb24gamECoDnpvFdxP6&quot;);"></div><div _ngcontent-c0="" class="message__wrapper"><div _ngcontent-c0="">
 <div _ngcontent-c0="" class="message__body message_greeting" style="background: rgb(244, 245, 246);"> Hi! Thanks for using MediBot. We will guide you in the process. Please scan your referral slip. 
@@ -49,13 +51,18 @@ const fake=  `
                 color: rgba(0,0,0,.87) !important;
             "><span class="mat-button-wrapper"><mat-icon _ngcontent-c0="" class="mat-icon material-icons" role="img" aria-hidden="true">menu</mat-icon></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button><mat-menu _ngcontent-c0="" class="ng-animate-disabled"><!----></mat-menu><mat-menu _ngcontent-c0="" class="ng-tns-c4-2"><!----></mat-menu><mat-menu _ngcontent-c0="" class="ng-tns-c4-3"><!----></mat-menu></div></div><div _ngcontent-c0="" autocomplete="off" class="chat__input"><div _ngcontent-c0="" class="round-block"><input _ngcontent-c0="" id="chat_input" matinputautofocus="" name="mess" type="text" placeholder="type something..." class="ng-untouched ng-pristine" disabled=""><button _ngcontent-c0="" mat-icon-button="" class="mat-icon-button" disabled=""><span class="mat-button-wrapper"><i _ngcontent-c0="" class="material-icons">send</i></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button></div><app-audio-recorder _ngcontent-c0="" id="sendAudioRec" _nghost-c7=""><audio _ngcontent-c7="" class="video"></audio><div _ngcontent-c7="" class="chat__audio"><!----><button _ngcontent-c7="" mat-icon-button="" class="mat-icon-button ng-star-inserted" disabled=""><span class="mat-button-wrapper"><mat-icon _ngcontent-c7="" class="mat-icon material-icons" role="img" aria-hidden="true">mic</mat-icon></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button><!----><!----></div></app-audio-recorder></div><!----><div _ngcontent-c0="" class="chat__copyright ng-star-inserted"><img _ngcontent-c0="" alt="" src="https://snatchbot.me/img/bot.png"> Powered by SnatchBot</div></div></div>`;
 const Patient: React.FC = () => (
-
   <div className="App">
-<div className="content" dangerouslySetInnerHTML={{__html: fake}}></div>
-<input id="file" type="file" accept="image/*" onChange={() => { window.location.assign('/chat');}}/>
-
-    
+    <LoadingScreen />
+    <div className="content" dangerouslySetInnerHTML={{ __html: fake }}></div>
+    <input
+      id="file"
+      type="file"
+      accept="image/*"
+      onChange={() => {
+        window.location.assign("/chat");
+      }}
+    />
   </div>
-)
+);
 
-export default withRouter(Patient)
+export default withRouter(Patient);
